@@ -1,9 +1,13 @@
 import { IS_APP_INIT } from "../constants/actionConst";
 
+
 // App init reducers
 //
-const isAppInitRdc = (state = [], action: any) => {
+export const isAppInitRdc: any = (state = [], action: any) => {
+
+
     switch (action.type) {
+
         case IS_APP_INIT:
             return {
                 ...state,
@@ -13,4 +17,5 @@ const isAppInitRdc = (state = [], action: any) => {
             return state;
     }
 }
-export default isAppInitRdc;
+
+// export default isAppInitRdc;

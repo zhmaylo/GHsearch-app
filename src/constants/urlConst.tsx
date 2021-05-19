@@ -22,14 +22,14 @@ const HTTP = http;
 /////////////////////////////
 // Start. Section 'URL for request'
 //
-// URL get authorization
-// POST
-export const URL_GET_USERS = HTTP + '://api.github.com/search/users?q=zhmaylo';
-export const URL_GET_REPOS = HTTP + '://api.github.com/search/search/repositories?q=ghsearch-app';
-// ===========================
-// URL get a list of categories
+// URL users search 
 // GET
-// export const URL_GET_CATEGORY = HTTP + "";
+export const URL_GET_USERS = HTTP + '://api.github.com/search/users?q=zhmaylo';
+// ===========================
+// URL repository search 
+// GET
+export const URL_GET_REPOS = HTTP + '://api.github.com/search/search/repositories?q=ghsearch-app';
+//
 // End. Section 'URL for request'
 /////////////////////////////
 

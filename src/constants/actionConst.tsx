@@ -7,7 +7,6 @@ export const  SEARCH_REQUEST = 'SEARCH_REQUEST';
 //End. Search section
 /////////////////////////////
 
-
 /////////////////////////////
 //Start. App init section
 //
@@ -17,6 +16,15 @@ export const IS_APP_INIT = 'IS_APP_INIT';
 //End. App init section
 /////////////////////////////
 
+/////////////////////////////
+//Start. Spiner section
+//
+// spiner toggle (off(false)/ on(true))
+export const SPINER_TOGGLE = 'SPINER_TOGGLE';
+// 
+//End. Spiner section
+/////////////////////////////
+
 
 
 /////////////////////////////
@@ -33,13 +41,4 @@ export const IS_APP_INIT = 'IS_APP_INIT';
 //
 //End.  section
 /////////////////////////////
-
-
-/////////////////////////////
-//Start.  section
-//
-//
-//End.  section
-/////////////////////////////
-
 
