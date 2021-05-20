@@ -1,10 +1,19 @@
 /////////////////////////////
 //Start. Search section
 //
-// search string
-export const  SEARCH_REQUEST = 'SEARCH_REQUEST';
+// search result
+export const  SEARCH_RESULT = 'SEARCH_RESULT';
 // 
 //End. Search section
+/////////////////////////////
+
+/////////////////////////////
+//Start. History section
+//
+// history search
+export const  HISTORY_SEARCH = 'HISTORY_SEARCH';
+// 
+//End. History section
 /////////////////////////////
 
 /////////////////////////////

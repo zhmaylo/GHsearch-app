@@ -1,16 +1,16 @@
 
 // Search reducers
 
-import { SEARCH_REQUEST } from "../constants/actionConst";
+import { SEARCH_RESULT } from "../constants/actionConst";
 
 //
 export const searchRdc: any = (state = [], action: any) => {
     switch (action.type) {
         // search string
-        case SEARCH_REQUEST:
+        case SEARCH_RESULT:
             return {
                 ...state,
-                search_request: action.payload
+                search_result: action.payload
             };
         default:
             return state;

@@ -99,3 +99,17 @@ export const TextInputSearchCmp = styled.TextInput`
 `;
 // End. Style SEARCH CMP
 //////////////////////////////
+
+//////////////////////////////
+// Start. Style HISTORY CMP
+//
+export const ViewHystoryCmp = styled.View`
+
+`;
+
+export const FlatListHystoryCmp = styled.FlatList`
+    
+`;
+
+// End. Style HYSTORY CMP
+//////////////////////////////

@@ -1,39 +1,27 @@
-
-
+import { SEARCH_RESULT } from "../../constants/actionConst";
+import { SEARCH_HIST_KEY, SEARCH_HIST_LENGTH } from "../../constants/storageConst";
 import { URL_GET } from "../../constants/urlConst";
-import { clone } from "../clone";
 import { fetchData } from "../fetch/fetchData";
+import { getData, storeData } from "../storage/storage";
 
 // get SearchResult - return search result
 // request - search string
 // return outProducts - array
-export const getSearchResult = (request: string) => {
-    console.log('🚀 ~ file: search.tsx ~ line 9 ~ getSearchResult ~ request', request);
-    let outProducts = [];
+export const getSearchResult = async (request: string, dispatch:any) => {
+    let outlist: any;
     // scheck search length
     if (request.length == 0) return null;
-
-    // console.log('🚀 ~ file: search.tsx ~ line 14 ~ getSearchResult ~ regExpArr', regExpArr);
-    getFetch(request);
-    return outProducts;
+    outlist = await getFetch(request);
+    dispatch({type: SEARCH_RESULT, payload:outlist});
 };
 
 
-// gerFetch - get data from server
-// request - search requst
+// getFetch - get data from server
+// request - search request
 const getFetch = async (request: any,) => {
-    let i = 0;
-    let data1 = [];
-    let data2 = [];
     let outdata = [];
-    while (i < URL_GET.length) {
-        fetchData(URL_GET[i] + request).then(data => {
-            console.log('🚀 ~ file: search.tsx ~ line 31 ~ getFetch ~ data', data);
-            outdata = outdata.concat(data);
-            console.log('🚀 ~ file: search.tsx ~ line 33 ~ getFetch ~ outdata', outdata);
-            i++;
-        });
-    }
+    outdata = await fetchData(URL_GET[0] + request + URL_GET[1]);
     return outdata;
 }
+
 

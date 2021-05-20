@@ -1,8 +1,9 @@
 import React from 'react';
 import { combineReducers } from "redux";
 
-import {isAppInitRdc} from './isAppInitRdc';
+import { isAppInitRdc } from './isAppInitRdc';
 import { searchRdc } from './searchRdc';
+import { historyRdc } from './historyRdc';
 import { spinerToggleRdc } from './spinerRdc';
 
 
@@ -30,9 +31,17 @@ export const initialState = {
     ////////////////////////////////
     //Start. Search
     searchRdc: {
-        search_request: '',
+        search_result: [],
     },
     //End. Search
+    ////////////////////////////////
+
+    ////////////////////////////////
+    //Start. History search
+    historyRdc: {
+        history_result: [],
+    },
+    //End. History search
     ////////////////////////////////
 
 };
@@ -59,6 +68,12 @@ export const unionRdc = combineReducers(
         //Start. Search
         searchRdc: searchRdc,
         //End. Search
+        ////////////////////////////////
+
+        ////////////////////////////////
+        //Start. History
+        historyRdc: historyRdc,
+        //End. Hystory
         ////////////////////////////////
 
 

@@ -22,14 +22,15 @@ const HTTP = http;
 /////////////////////////////
 // Start. Section 'URL for request'
 //
-// URL users search 
-// GET
-const URL_GET_USERS = HTTP + '://api.github.com/search/users?q=';
+// ===========================
+// URL user repository search 
+// GET      'https://api.github.com/users/'+{zhmaylo}+'/repos'
+const URL_GET_USER_REPOS = HTTP + '://api.github.com/users/';
 // ===========================
 // URL repository search 
 // GET
-const URL_GET_REPOS = HTTP + '://api.github.com/search/search/repositories?q=';
-export const URL_GET = [URL_GET_USERS, URL_GET_REPOS];
+const URL_GET_USER_REPOS2 = '/repos';
+export const URL_GET= [URL_GET_USER_REPOS, URL_GET_USER_REPOS2]
 //
 // End. Section 'URL for request'
 /////////////////////////////
