@@ -1,17 +1,9 @@
 import React, { useReducer } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { ViewApp } from './src/components/style';
 import { ContextApp, initialState, unionRdc } from './src/reducers/unionRdc';
 import MainScr from './src/screen/MainScr';
-import { ThemeProvider } from 'styled-components';
-// let styled = require ('styled-components/native');
-import styled from 'styled-components/native' 
 
-  const StyledView = styled.View`
-  flex: 1;
-  background-color: #394048;
-  alignItems: 'center',
-  justifyContent: 'center',
-  `
 
 export default function App() {
 
@@ -20,10 +12,10 @@ export default function App() {
 
   return (
     <ContextApp.Provider value={{ state, dispatch }}>
-        <StyledView>
+        <ViewApp>
           <MainScr />
  
-         </StyledView>
+         </ViewApp>
     </ContextApp.Provider>
 
   );

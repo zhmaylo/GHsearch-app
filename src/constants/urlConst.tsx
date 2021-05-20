@@ -24,11 +24,12 @@ const HTTP = http;
 //
 // URL users search 
 // GET
-export const URL_GET_USERS = HTTP + '://api.github.com/search/users?q=zhmaylo';
+const URL_GET_USERS = HTTP + '://api.github.com/search/users?q=';
 // ===========================
 // URL repository search 
 // GET
-export const URL_GET_REPOS = HTTP + '://api.github.com/search/search/repositories?q=ghsearch-app';
+const URL_GET_REPOS = HTTP + '://api.github.com/search/search/repositories?q=';
+export const URL_GET = [URL_GET_USERS, URL_GET_REPOS];
 //
 // End. Section 'URL for request'
 /////////////////////////////

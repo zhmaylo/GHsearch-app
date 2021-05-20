@@ -1,29 +1,24 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
-import { TextInput } from "react-native-gesture-handler"
-import { SEARCH_REQUEST } from '../../constants/actionConst'
-import { HEADER_BUTTON_SIZE } from '../../constants/headerConst'
+import { debounce } from '../../api/myApi';
+import { getSearchResult } from '../../api/search/search';
+import { SEARCH_DELAY } from '../../constants/searchConst';
+import { TextInputSearchCmp, ViewSearchCmp } from '../style';
 
 
-export const SearchCmp = ({onChangeRequest, valueFromState}) => {
+export const SearchCmp = () => {
+    let f =  debounce(getSearchResult, SEARCH_DELAY);
+    
+    
     return (
-        <View style={styles.container}>
-            <TextInput
-                value={valueFromState}
+        <ViewSearchCmp >
+            <TextInputSearchCmp
+                // value='12345'
                 onChangeText={(value) => {
-                    onChangeRequest(SEARCH_REQUEST, value); 
+                    f(value);
                 }}
             />
-        </View>
+
+        </ViewSearchCmp>
     )
 }
 
-
-const styles = StyleSheet.create({
-    container: {
-        paddingVertical: 3,
-        paddingHorizontal: 3,
-        backgroundColor: 'white',
-        height: HEADER_BUTTON_SIZE,
-    }
-})
