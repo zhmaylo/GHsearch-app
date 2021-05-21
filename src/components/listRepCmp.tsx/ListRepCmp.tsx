@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
-import { FlatList, Linking, TouchableOpacity, View } from 'react-native';
-import { toStorage } from '../../api/history/history';
-import { getSearchResult } from '../../api/search/search';
+import { ActivityIndicator, FlatList, Linking, Text, TouchableOpacity, View } from 'react-native';
+import { NAME_REP, DESCRIPTION_REP, LANGUAGE_REP } from '../../constants/listRepConst';
+import { SPINER_MES_LOAD } from '../../constants/spinerConst';
 import { ContextApp } from '../../reducers/unionRdc';
+import { SpinerСmp } from '../spiner/SpinerCmp';
 import { TextListRepCmp, ViewListRepCmp } from '../style';
 
 
@@ -10,30 +11,28 @@ export const ListRepCmp = () => {
 
     const { state, dispatch } = useContext(ContextApp);
 
-    // const DATA = ['First Item', 'Second Item', 'Third Item'];
-
-    console.log('🚀 ~ file: HistoryCmp.jsx ~ line 25 ~ HistoryCmp ~ DATA', DATA);
     const renderItem = ({ item }) => {
         return (
             <TouchableOpacity
-                onPress={(link: any) => {
-                    Linking.openURL(link);
+                // html_url
+                onPress={() => {
+                    Linking.openURL(item.html_url)
                 }}
             >
-                <TextListRepCmp
-                    value={item.name}
-                />
+                <TextListRepCmp>
+                    {NAME_REP + item.name + '\n'}
+                    {LANGUAGE_REP + item.language + '\n'}
+                    {DESCRIPTION_REP + item.description}
+                </TextListRepCmp>
             </TouchableOpacity >
         );
     };
 
-    let list = [];
-    list = state.searchRdc.search_result;
-    console.log('🚀 ~ file: ListRepCmp.tsx ~ line 31 ~ ListRepyCmp ~ list', list);
     return (
         <ViewListRepCmp>
+  
             <FlatList
-                data={list}
+                data={state.searchRdc.search_result}
                 renderItem={renderItem}
                 keyExtractor={() => Math.random().toString()}
             />

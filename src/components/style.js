@@ -1,9 +1,13 @@
 
-import styled from 'styled-components/native';
+
+import { Dimensions } from "react-native";
+import styled from "styled-components/native";
+
+
+// import styled  from 'styled-components/native';
 
 /////////////////////////////
 // Start. Section 'Display' - screen options
-import { Dimensions } from "react-native";
 //
 export const WINDOW_WIDTH = Dimensions.get('window').width;
 export const WINDOW_HEIGHT = Dimensions.get('window').height;
@@ -60,11 +64,11 @@ export const ViewHeaderCmp = styled.View`
     alignItems: center;
     justifyContent: center;
 `;
+
 // style Image 
 export const ImageHeaderCmp = styled.Image`
-    width: ${widthLimit};
-    height: 110;
-    resizeMode: center;
+    width: 300px;
+    height: 110px; 
 `;
 // style Text 
 export const TextHeaderCmp = styled.Text`
@@ -72,12 +76,12 @@ export const TextHeaderCmp = styled.Text`
 `;
 // style Separator
 export const Separator = styled.TextInput`
-    width: ${widthSepar};
+    width: ${widthSepar}px;
     borderColor: rgb(${SeparR}, ${SeparG}, ${SeparB});
 
-    marginTop: 10;
-    height: 1;
-    borderWidth: 1;
+    marginTop: 10px;
+    height: 1px;
+    borderWidth: 1px;
     `;
 // End. Style HEADER CMP
 //////////////////////////////
@@ -92,21 +96,22 @@ export const ViewSearchCmp = styled.View`
 
 // style TextInput
 export const TextInputSearchCmp = styled.TextInput`
-    width: ${widthSepar} ;
-    height: 26;
+    width: ${widthSepar}px ;
+   
     borderColor: #ffffff;
     background-color: #ffffff
-    borderWidth: 1;
-    borderRadius: 20; 
+    borderWidth: 1px;
+    borderRadius: 20px; 
 
-    marginTop: 10;
-    paddingLeft: 10;
-    paddingRight: 10;
+    marginTop: 10px;
+    paddingVertical: 3px;
+    paddingHorizontal: 15px;
+
     color: black;
     textAlign: left;
     textAlignVertical: center;
 
-    fontSize: 18;
+    fontSize: 18px;
     fontWeight: 600;
 
 `;
@@ -129,11 +134,48 @@ export const TextHistoryCmp = styled.Text`
 //
 
 export const ViewListRepCmp = styled.View`
-    alignItem: center
+    alignItems: center;
+    background-color: rgb(${BackR}, ${BackG}, ${BackB});
 `;
-export const TextListRepCmp = styled (TextInputSearchCmp)`
     
+
+export const TextListRepCmp = styled.Text`
+    width: ${widthSepar}px ;
+    
+    borderColor: #ffffff;
+    background-color: #ffffff
+    borderWidth: 1px;
+    borderRadius: 20px; 
+
+    marginTop: 10px;
+    paddingVertical: 3px;
+    paddingHorizontal: 15px;
+
+    color: black;
+    textAlign: left;
+    textAlignVertical: center;
+
+    fontSize: 18px;
+    fontWeight: 600;
+  
 `;
 
 // End. Style LIST REP CMP
+//////////////////////////////
+
+//////////////////////////////
+// Start. Style SPINER CMP
+//
+export const ViewSpinerCmp = styled.View`
+    flexDirection: column;
+    alignItems: center;
+    paddingVertical: 10px;
+    
+`;
+
+export const TextSpinerCmp = styled.Text`
+    color: #fff; 
+`;
+
+// End. Style SPINER CMP
 //////////////////////////////

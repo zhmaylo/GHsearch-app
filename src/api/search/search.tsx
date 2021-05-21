@@ -1,20 +1,20 @@
-import { SEARCH_RESULT } from "../../constants/actionConst";
-import { SEARCH_HIST_KEY, SEARCH_HIST_LENGTH } from "../../constants/storageConst";
+import { SEARCH_RESULT, SPINER_TOGGLE } from "../../constants/actionConst";
 import { URL_GET } from "../../constants/urlConst";
 import { fetchData } from "../fetch/fetchData";
-import { getData, storeData } from "../storage/storage";
+
 
 // get SearchResult - return search result
 // request - search string
 // return outProducts - array
 export const getSearchResult = async (request: string, dispatch:any) => {
-console.log('🚀 ~ file: search.tsx ~ line 11 ~ getSearchResult ~ dispatch', dispatch);
-console.log('🚀 ~ file: search.tsx ~ line 11 ~ getSearchResult ~ request', request);
+    
     let outlist: any;
     // scheck search length
     if (request.length == 0) return null;
+    dispatch({ type: SPINER_TOGGLE, payload: true });
     outlist = await getFetch(request);
     dispatch({type: SEARCH_RESULT, payload:outlist});
+    dispatch({ type: SPINER_TOGGLE, payload: false });
 };
 
 

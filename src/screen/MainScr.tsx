@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { SafeAreaView, View, StatusBar, StyleSheet, Image } from 'react-native';
+import { SafeAreaView, View, StatusBar, StyleSheet, Image, ActivityIndicator } from 'react-native';
 import { fromStorage } from '../api/history/history';
 import { HeaderCmp } from '../components/header/HeaderCmp';
 import { ListRepCmp } from '../components/listRepCmp.tsx/ListRepCmp';
@@ -14,31 +14,32 @@ export default function MainScr() {
     const { state, dispatch } = useContext(ContextApp);
     useEffect(() => {
 
-        dispatch({ type: SPINER_TOGGLE, payload: false })
         dispatch({ type: IS_APP_INIT, payload: true });
         fromStorage().then((his) => {
-            dispatch({ type: HISTORY_SEARCH, payload: his}); 
+            dispatch({ type: HISTORY_SEARCH, payload: his });
+            dispatch({ type: SPINER_TOGGLE, payload: false });
         });
-    
+
     }, [!state.isAppInitRdc.isAppInit]);
 
 
-    if ((state.isAppInitRdc.isAppInit) && (state.spinerToggleRdc.spinerToggle == false)) {
-        return (
-            <SafeAreaView>
-                <StatusBar hidden={true} />
-                <ViewMain>
-                    <HeaderCmp />
-                    <ListRepCmp/>
-                </ViewMain>
-            </SafeAreaView>
-        );
-    }
-    else return (
-        <View>
-            <SpinerСmp
-                spiner_mes={SPINER_MES_LOAD}
-            />
-        </View>
-    )
+    // if ((state.isAppInitRdc.isAppInit) && (state.spinerToggleRdc.spinerToggle == false)) {
+    return (
+        <SafeAreaView>
+            <StatusBar hidden={true} />
+            <ViewMain>
+                <HeaderCmp />
+                {state.spinerToggleRdc.spinerToggle && <SpinerСmp spiner_mes={SPINER_MES_LOAD} />}
+                <ListRepCmp />
+            </ViewMain>
+        </SafeAreaView>
+    );
+    // }
+    // else return (
+    //     <View>
+    //         <SpinerСmp
+    //             spiner_mes={SPINER_MES_LOAD}
+    //         />
+    //     </View>
+    // )
 }

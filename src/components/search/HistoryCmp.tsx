@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { FlatList, ScrollView, Text, View } from 'react-native';
+import { SEARCH_HISTORY } from '../../constants/historyConst';
 import { ContextApp } from '../../reducers/unionRdc';
 import { TextHistoryCmp } from '../style';
 
@@ -12,9 +13,10 @@ export const HistoryCmp = () => {
         );
     };
     let history = [];
-    history = state.historyRdc.historySearch;
+   
     return (
         <View>
+            <TextHistoryCmp>{SEARCH_HISTORY}</TextHistoryCmp>                        
             <FlatList
                 data={state.historyRdc.historySearch}
                 inverted={true}
