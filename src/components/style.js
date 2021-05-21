@@ -61,13 +61,13 @@ let widthLimit= WINDOW_WIDTH > 330 ? 330 : WINDOW_WIDTH;
 let widthSepar= WINDOW_WIDTH - 30;
 
 export const ViewHeaderCmp = styled.View`
+    flex: 1;
     alignItems: center;
-    justifyContent: center;
 `;
 
 // style Image 
 export const ImageHeaderCmp = styled.Image`
-    width: 300px;
+    width: ${widthLimit}px;
     height: 110px; 
 `;
 // style Text 
@@ -97,7 +97,7 @@ export const ViewSearchCmp = styled.View`
 // style TextInput
 export const TextInputSearchCmp = styled.TextInput`
     width: ${widthSepar}px ;
-   
+    height: 30px;
     borderColor: #ffffff;
     background-color: #ffffff
     borderWidth: 1px;
@@ -122,6 +122,15 @@ export const TextInputSearchCmp = styled.TextInput`
 // Start. Style HISTORY CMP
 //
 
+export const ViewHistoryCmp = styled.Text`
+    
+    flexDirection: column;
+    
+    justifyContent: flex-start;
+
+    
+`;
+
 export const TextHistoryCmp = styled.Text`
     color: rgb(${ForeR}, ${ForeG}, ${ForeB});
 `;
@@ -134,7 +143,6 @@ export const TextHistoryCmp = styled.Text`
 //
 
 export const ViewListRepCmp = styled.View`
-    alignItems: center;
     background-color: rgb(${BackR}, ${BackG}, ${BackB});
 `;
     
@@ -167,13 +175,16 @@ export const TextListRepCmp = styled.Text`
 // Start. Style SPINER CMP
 //
 export const ViewSpinerCmp = styled.View`
+
     flexDirection: column;
     alignItems: center;
-    paddingVertical: 10px;
-    
+    paddingTop: 2px;
+ 
+   
 `;
 
 export const TextSpinerCmp = styled.Text`
+    paddingTop: 20px;
     color: #fff; 
 `;
 

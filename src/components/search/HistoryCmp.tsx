@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { FlatList, ScrollView, Text, View } from 'react-native';
 import { SEARCH_HISTORY } from '../../constants/historyConst';
 import { ContextApp } from '../../reducers/unionRdc';
-import { TextHistoryCmp } from '../style';
+import { TextHistoryCmp, ViewHistoryCmp } from '../style';
 
 
 export const HistoryCmp = () => {
@@ -15,15 +15,14 @@ export const HistoryCmp = () => {
     let history = [];
    
     return (
-        <View>
-            <TextHistoryCmp>{SEARCH_HISTORY}</TextHistoryCmp>                        
+        <ViewHistoryCmp>
             <FlatList
                 data={state.historyRdc.historySearch}
                 inverted={true}
                 renderItem={renderItem}
                 keyExtractor={() => Math.random().toString()}
             />
-        </View>
+        </ViewHistoryCmp>
     )
 }
 

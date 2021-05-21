@@ -30,7 +30,7 @@ export const ListRepCmp = () => {
 
     return (
         <ViewListRepCmp>
-  
+                
             <FlatList
                 data={state.searchRdc.search_result}
                 renderItem={renderItem}

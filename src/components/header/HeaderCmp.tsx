@@ -9,15 +9,19 @@ import { ViewHeaderCmp, TextHeaderCmp, Separator, ImageHeaderCmp } from '../styl
 
 export const HeaderCmp = () => {
     return (
-        <ViewHeaderCmp >
+        <ViewHeaderCmp>
+            {/* <View style={{alignItems: 'center',
+             width: 100, height: 250 }}> */}
                 <ImageHeaderCmp
-                    resizeMode='center'
+                    resizeMode='contain'
                     source={IMAGE_TITLE}
                 />
+            {/* </View> */}
             <TextHeaderCmp> {HEADER_TITLE} </TextHeaderCmp>
             <Separator></Separator>
             <SearchCmp />
-        </ViewHeaderCmp>
+            
+        </ViewHeaderCmp >
     )
 }
 

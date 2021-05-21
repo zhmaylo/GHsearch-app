@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 import { toStorage } from '../../api/history/history';
 import { debounce } from '../../api/myApi';
 import { getSearchResult } from '../../api/search/search';
-import { STORAGE_DELAY } from '../../constants/historyConst';
+import { SEARCH_HISTORY, STORAGE_DELAY } from '../../constants/historyConst';
 import { SEARCH_DELAY } from '../../constants/searchConst';
 import { SPINER_MES_LOAD } from '../../constants/spinerConst';
 import { ContextApp } from '../../reducers/unionRdc';
+import { ListRepCmp } from '../listRepCmp.tsx/ListRepCmp';
 import { SpinerСmp } from '../spiner/SpinerCmp';
-import { TextInputSearchCmp, ViewSearchCmp } from '../style';
+import { TextHistoryCmp, TextInputSearchCmp, ViewSearchCmp } from '../style';
 import { HistoryCmp } from './HistoryCmp';
 
 
@@ -25,8 +26,10 @@ export const SearchCmp = () => {
                         toStor(value, dispatch);
                     }}
                 />
-                <HistoryCmp />
-                
+                <TextHistoryCmp>{SEARCH_HISTORY}</TextHistoryCmp>                        
+                  <HistoryCmp/>  
+                  {state.spinerToggleRdc.spinerToggle && <SpinerСmp spiner_mes= {SPINER_MES_LOAD} />}
+                   <ListRepCmp />
             </ViewSearchCmp>
         )
     }

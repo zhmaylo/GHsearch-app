@@ -3,6 +3,7 @@ import { SafeAreaView, View, StatusBar, StyleSheet, Image, ActivityIndicator } f
 import { fromStorage } from '../api/history/history';
 import { HeaderCmp } from '../components/header/HeaderCmp';
 import { ListRepCmp } from '../components/listRepCmp.tsx/ListRepCmp';
+import { HistoryCmp } from '../components/search/HistoryCmp';
 import { SpinerСmp } from '../components/spiner/SpinerCmp';
 import { ViewMain } from '../components/style';
 import { HISTORY_SEARCH, IS_APP_INIT, SPINER_TOGGLE } from '../constants/actionConst';
@@ -28,9 +29,8 @@ export default function MainScr() {
         <SafeAreaView>
             <StatusBar hidden={true} />
             <ViewMain>
-                <HeaderCmp />
-                {state.spinerToggleRdc.spinerToggle && <SpinerСmp spiner_mes={SPINER_MES_LOAD} />}
-                <ListRepCmp />
+                <HeaderCmp/>
+               
             </ViewMain>
         </SafeAreaView>
     );
