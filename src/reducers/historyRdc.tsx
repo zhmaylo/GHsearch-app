@@ -10,7 +10,7 @@ export const historyRdc: any = (state = [], action: any) => {
         case HISTORY_SEARCH:
             return {
                 ...state,
-                history_search: action.payload
+                historySearch: action.payload
             };
         default:
             return state;

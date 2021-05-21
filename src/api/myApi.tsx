@@ -2,7 +2,7 @@
 // Она сработает только один раз через N миллисекунд после последнего вызова.
 // Если ей передан аргумент `immediate`, то она будет вызвана один раз сразу после
 // первого запуска.
-export const  debounce = (func: any, wait:any, immediate:any) => {
+export const  debounce = (func: any, wait:any, immediate?:any) => {
 	var timeout;
 	return function() {
 		var context = this, args = arguments;

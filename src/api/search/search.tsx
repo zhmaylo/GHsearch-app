@@ -8,6 +8,8 @@ import { getData, storeData } from "../storage/storage";
 // request - search string
 // return outProducts - array
 export const getSearchResult = async (request: string, dispatch:any) => {
+console.log('🚀 ~ file: search.tsx ~ line 11 ~ getSearchResult ~ dispatch', dispatch);
+console.log('🚀 ~ file: search.tsx ~ line 11 ~ getSearchResult ~ request', request);
     let outlist: any;
     // scheck search length
     if (request.length == 0) return null;

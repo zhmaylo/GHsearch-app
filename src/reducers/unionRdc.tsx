@@ -39,7 +39,7 @@ export const initialState = {
     ////////////////////////////////
     //Start. History search
     historyRdc: {
-        history_result: [],
+        historySearch: [],
     },
     //End. History search
     ////////////////////////////////

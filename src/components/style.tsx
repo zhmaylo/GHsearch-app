@@ -11,18 +11,29 @@ export const WINDOW_HEIGHT = Dimensions.get('window').height;
 // End. Section 'Display' - screen options
 /////////////////////////////
 
-// color foregraund backgroud
-// const colorFg = `#394048`;
-// const colorBg = {'fef4c9'};
-//
+// ccolor bacground = `#394048`;
+const BackR = 57;
+const BackG = 64;
+const BackB = 72;
+
+// color foreground. text, logo = '#fef4c9';
+const ForeR = 254;
+const ForeG = 244;
+const ForeB = 201;
+
+// color separator = '#969A97';
+const SeparR = 150;
+const SeparG = 154;
+const SeparB = 151;
+
 
 //////////////////////////////
 // Start. Style APP 
 // style View App
 export const ViewApp = styled.View`
     flex: 1;
-    background-color: #394048;
-    color: #fef4c9;
+    background-color: rgb(${BackR}, ${BackG}, ${BackB});
+    color: rgb(${ForeR}, ${ForeG}, ${ForeB});
 `;
 // End. Style APP 
 //////////////////////////////
@@ -57,12 +68,13 @@ export const ImageHeaderCmp = styled.Image`
 `;
 // style Text 
 export const TextHeaderCmp = styled.Text`
-    color: #fef4c9;
+    color: rgb(${ForeR}, ${ForeG}, ${ForeB});
 `;
 // style Separator
 export const Separator = styled.TextInput`
     width: ${widthSepar};
-    borderColor: #969A97;
+    borderColor: rgb(${SeparR}, ${SeparG}, ${SeparB});
+
     marginTop: 10;
     height: 1;
     borderWidth: 1;
@@ -86,11 +98,12 @@ export const TextInputSearchCmp = styled.TextInput`
     background-color: #ffffff
     borderWidth: 1;
     borderRadius: 20; 
-    color: #fef4c9;
-    marginTop: 10;
 
+    marginTop: 10;
+    paddingLeft: 10;
+    paddingRight: 10;
     color: black;
-    textAlign: center;
+    textAlign: left;
     textAlignVertical: center;
 
     fontSize: 18;
@@ -103,13 +116,24 @@ export const TextInputSearchCmp = styled.TextInput`
 //////////////////////////////
 // Start. Style HISTORY CMP
 //
-export const ViewHystoryCmp = styled.View`
 
-`;
-
-export const FlatListHystoryCmp = styled.FlatList`
-    
+export const TextHistoryCmp = styled.Text`
+    color: rgb(${ForeR}, ${ForeG}, ${ForeB});
 `;
 
 // End. Style HYSTORY CMP
+//////////////////////////////
+
+//////////////////////////////
+// Start. Style LIST REP CMP
+//
+
+export const ViewListRepCmp = styled.View`
+    alignItem: center
+`;
+export const TextListRepCmp = styled (TextInputSearchCmp)`
+    
+`;
+
+// End. Style LIST REP CMP
 //////////////////////////////

@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from 'react';
 import { SafeAreaView, View, StatusBar, StyleSheet, Image } from 'react-native';
+import { fromStorage } from '../api/history/history';
 import { HeaderCmp } from '../components/header/HeaderCmp';
+import { ListRepCmp } from '../components/listRepCmp.tsx/ListRepCmp';
 import { SpinerСmp } from '../components/spiner/SpinerCmp';
 import { ViewMain } from '../components/style';
-import { IS_APP_INIT, SPINER_TOGGLE } from '../constants/actionConst';
+import { HISTORY_SEARCH, IS_APP_INIT, SPINER_TOGGLE } from '../constants/actionConst';
 import { SPINER_MES_LOAD } from '../constants/spinerConst';
 import { ContextApp } from "../reducers/unionRdc";
 
@@ -14,7 +16,10 @@ export default function MainScr() {
 
         dispatch({ type: SPINER_TOGGLE, payload: false })
         dispatch({ type: IS_APP_INIT, payload: true });
-
+        fromStorage().then((his) => {
+            dispatch({ type: HISTORY_SEARCH, payload: his}); 
+        });
+    
     }, [!state.isAppInitRdc.isAppInit]);
 
 
@@ -24,6 +29,7 @@ export default function MainScr() {
                 <StatusBar hidden={true} />
                 <ViewMain>
                     <HeaderCmp />
+                    <ListRepCmp/>
                 </ViewMain>
             </SafeAreaView>
         );
