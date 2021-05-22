@@ -1,3 +1,3 @@
 # GHsearch-app
 
-Поиск репозиторий по пользователю и переход
+Search repository by user. On pressing, redirecting to the GIT repository.
