@@ -4,6 +4,8 @@ import { getData, storeData } from "../storage/storage";
 
 
 // toStore - push history to storage
+// indata - saved data
+// dispatch - dispatch
 export const toStorage = async (indata: string, dispatch: any) => {
     if (indata.length==0) {return};
     let history = await fromStorage();

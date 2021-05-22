@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
-import { FlatList, ScrollView, Text, View } from 'react-native';
-import { SEARCH_HISTORY } from '../../constants/historyConst';
+import { FlatList } from 'react-native';
 import { ContextApp } from '../../reducers/unionRdc';
 import { TextHistoryCmp, ViewHistoryCmp } from '../style';
 
-
+// shows search history
 export const HistoryCmp = () => {
     const { state, dispatch } = useContext(ContextApp);
     const renderItem = ({ item }) => {
@@ -12,7 +11,6 @@ export const HistoryCmp = () => {
             <TextHistoryCmp >{item}</TextHistoryCmp>
         );
     };
-    let history = [];
    
     return (
         <ViewHistoryCmp>

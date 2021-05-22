@@ -9,10 +9,11 @@ import { fetchData } from "../fetch/fetchData";
 export const getSearchResult = async (request: string, dispatch:any) => {
     
     let outlist: any;
-    // scheck search length
+    // search length check 
     if (request.length == 0) return null;
     dispatch({ type: SPINER_TOGGLE, payload: true });
     outlist = await getFetch(request);
+    // check the search rezult
     if (outlist.length==undefined) outlist=[];
     
     dispatch({type: SEARCH_RESULT, payload:outlist});
@@ -21,7 +22,7 @@ export const getSearchResult = async (request: string, dispatch:any) => {
 
 
 // getFetch - get data from server
-// request - search request
+// request - request search 
 const getFetch = async (request: any,) => {
     let outdata = [];
     outdata = await fetchData(URL_GET[0] + request + URL_GET[1]);

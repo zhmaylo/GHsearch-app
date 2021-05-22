@@ -7,7 +7,6 @@ export const SpinerСmp = ({spiner_mes}) => {
     return (
         <ViewSpinerCmp>
             <ActivityIndicator size="large" color="#ffffff" /> 
-        
             <TextSpinerCmp >{spiner_mes}</TextSpinerCmp>
         </ViewSpinerCmp>
     )

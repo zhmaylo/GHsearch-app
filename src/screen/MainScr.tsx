@@ -1,14 +1,13 @@
 import React, { useContext, useEffect } from 'react';
-import { SafeAreaView, View, StatusBar, StyleSheet, Image, ActivityIndicator } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
 import { fromStorage } from '../api/history/history';
 import { HeaderCmp } from '../components/header/HeaderCmp';
 import { ListRepCmp } from '../components/listRepCmp.tsx/ListRepCmp';
 import { HistoryCmp } from '../components/search/HistoryCmp';
 import { SearchCmp } from '../components/search/SearchCmp';
 import { SpinerСmp } from '../components/spiner/SpinerCmp';
-import { Separator, TextHeaderCmp, TextHistoryCmp, ViewMain } from '../components/style';
+import { Separator, TextHistoryCmp, ViewMain } from '../components/style';
 import { HISTORY_SEARCH, IS_APP_INIT, SPINER_TOGGLE } from '../constants/actionConst';
-import { HEADER_TITLE } from '../constants/headerConst';
 import { SEARCH_HISTORY } from '../constants/historyConst';
 import { SPINER_MES_LOAD } from '../constants/spinerConst';
 import { ContextApp } from "../reducers/unionRdc";
@@ -26,8 +25,6 @@ export default function MainScr() {
 
     }, [!state.isAppInitRdc.isAppInit]);
 
-
-    // if ((state.isAppInitRdc.isAppInit) && (state.spinerToggleRdc.spinerToggle == false)) {
     return (
         <SafeAreaView>
             <StatusBar hidden={true} />

@@ -1,12 +1,9 @@
 /////////////////////////////
 // Start. Section 'Spinner image, '
 //
-
 //spinner message 
-export const SPINER_MES_LOAD = 'Загрузка...';
-export const SPINER_MES_CHECK = 'Проверка...';
-
+export const SPINER_MES_LOAD = 'Loading...';
 //
-// End. Section 'Footer image'
+// End. Section 'Spinner image'
 /////////////////////////////
 

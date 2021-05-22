@@ -1,10 +1,5 @@
-
-
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";
-
-
-// import styled  from 'styled-components/native';
 
 /////////////////////////////
 // Start. Section 'Display' - screen options
@@ -56,12 +51,12 @@ export const ViewMain = styled.View`
 //////////////////////////////
 // Start. Style HEADER CMP
 //
-// style View
+// max logo width 
 let widthLimit= WINDOW_WIDTH > 330 ? 330 : WINDOW_WIDTH;
+// separator width
 let widthSepar= WINDOW_WIDTH - 30;
-
+// style View
 export const ViewHeaderCmp = styled.View`
-    
     alignItems: center;
 `;
 
@@ -75,7 +70,7 @@ export const TextHeaderCmp = styled.Text`
     color: rgb(${ForeR}, ${ForeG}, ${ForeB});
 `;
 // style Separator
-export const Separator = styled.TextInput`
+export const Separator = styled.View`
     width: ${widthSepar}px;
     borderColor: rgb(${SeparR}, ${SeparG}, ${SeparB});
 
@@ -89,11 +84,6 @@ export const Separator = styled.TextInput`
 //////////////////////////////
 // Start. Style SEARCH CMP
 //
-// style View
-export const ViewSearchCmp = styled.View`
-
-`;
-
 // style TextInput
 export const TextInputSearchCmp = styled.TextInput`
     width: ${widthSepar}px ;
@@ -113,7 +103,6 @@ export const TextInputSearchCmp = styled.TextInput`
 
     fontSize: 18px;
     fontWeight: 600;
-
 `;
 // End. Style SEARCH CMP
 //////////////////////////////
@@ -121,37 +110,30 @@ export const TextInputSearchCmp = styled.TextInput`
 //////////////////////////////
 // Start. Style HISTORY CMP
 //
-
+// style View
 export const ViewHistoryCmp = styled.Text`
-    
     flexDirection: column;
-    
     justifyContent: flex-start;
-
-    
 `;
-
+// style text
 export const TextHistoryCmp = styled.Text`
     color: rgb(${ForeR}, ${ForeG}, ${ForeB});
 `;
-
 // End. Style HYSTORY CMP
 //////////////////////////////
 
 //////////////////////////////
 // Start. Style LIST REP CMP
 //
-
+// style View
 export const ViewListRepCmp = styled.View`
     background-color: rgb(${BackR}, ${BackG}, ${BackB});
     height: ${WINDOW_HEIGHT-300}px;
     paddingTop: 5px;
     paddingBottom: 2px;
-    
-    
 `;
-    
 
+// style text
 export const TextListRepCmp = styled.Text`
     width: ${widthSepar}px ;
     
@@ -170,24 +152,20 @@ export const TextListRepCmp = styled.Text`
 
     fontSize: 18px;
     fontWeight: 600;
-  
 `;
-
 // End. Style LIST REP CMP
 //////////////////////////////
 
 //////////////////////////////
 // Start. Style SPINER CMP
 //
+// stylew view
 export const ViewSpinerCmp = styled.View`
-
     flexDirection: column;
     alignItems: center;
     paddingTop: 2px;
- 
-   
 `;
-
+// style text
 export const TextSpinerCmp = styled.Text`
     paddingTop: 20px;
     color: #fff; 
