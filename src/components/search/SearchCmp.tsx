@@ -17,20 +17,17 @@ export const SearchCmp = () => {
     const toStor: any = debounce(toStorage, STORAGE_DELAY);
     const { state, dispatch } = useContext(ContextApp);
 
-        return (
-            <ViewSearchCmp >
-                <TextInputSearchCmp
+    return (
+        <ViewSearchCmp >
+            <TextInputSearchCmp
 
-                    onChangeText={(value: any) => {
-                        getSearchRes(value, dispatch);
-                        toStor(value, dispatch);
-                    }}
-                />
-                <TextHistoryCmp>{SEARCH_HISTORY}</TextHistoryCmp>                        
-                  <HistoryCmp/>  
-                  {state.spinerToggleRdc.spinerToggle && <SpinerСmp spiner_mes= {SPINER_MES_LOAD} />}
-                   <ListRepCmp />
-            </ViewSearchCmp>
-        )
-    }
+                onChangeText={(value: any) => {
+                    getSearchRes(value, dispatch);
+                    toStor(value, dispatch);
+                }}
+            />
+
+        </ViewSearchCmp>
+    )
+}
 

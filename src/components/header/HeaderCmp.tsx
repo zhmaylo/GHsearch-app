@@ -17,10 +17,7 @@ export const HeaderCmp = () => {
                     source={IMAGE_TITLE}
                 />
             {/* </View> */}
-            <TextHeaderCmp> {HEADER_TITLE} </TextHeaderCmp>
-            <Separator></Separator>
-            <SearchCmp />
-            
+            <TextHeaderCmp> {HEADER_TITLE} </TextHeaderCmp> 
         </ViewHeaderCmp >
     )
 }

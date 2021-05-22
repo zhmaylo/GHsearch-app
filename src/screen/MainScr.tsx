@@ -4,9 +4,12 @@ import { fromStorage } from '../api/history/history';
 import { HeaderCmp } from '../components/header/HeaderCmp';
 import { ListRepCmp } from '../components/listRepCmp.tsx/ListRepCmp';
 import { HistoryCmp } from '../components/search/HistoryCmp';
+import { SearchCmp } from '../components/search/SearchCmp';
 import { SpinerСmp } from '../components/spiner/SpinerCmp';
-import { ViewMain } from '../components/style';
+import { Separator, TextHeaderCmp, TextHistoryCmp, ViewMain } from '../components/style';
 import { HISTORY_SEARCH, IS_APP_INIT, SPINER_TOGGLE } from '../constants/actionConst';
+import { HEADER_TITLE } from '../constants/headerConst';
+import { SEARCH_HISTORY } from '../constants/historyConst';
 import { SPINER_MES_LOAD } from '../constants/spinerConst';
 import { ContextApp } from "../reducers/unionRdc";
 
@@ -29,17 +32,14 @@ export default function MainScr() {
         <SafeAreaView>
             <StatusBar hidden={true} />
             <ViewMain>
-                <HeaderCmp/>
-               
+                <HeaderCmp />
+                <Separator></Separator>
+                <SearchCmp />
+                <TextHistoryCmp>{SEARCH_HISTORY}</TextHistoryCmp>
+                <HistoryCmp />
+                {state.spinerToggleRdc.spinerToggle && <SpinerСmp spiner_mes={SPINER_MES_LOAD} />}
+                <ListRepCmp />
             </ViewMain>
         </SafeAreaView>
     );
-    // }
-    // else return (
-    //     <View>
-    //         <SpinerСmp
-    //             spiner_mes={SPINER_MES_LOAD}
-    //         />
-    //     </View>
-    // )
 }

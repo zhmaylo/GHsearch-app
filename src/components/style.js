@@ -36,6 +36,7 @@ const SeparB = 151;
 // style View App
 export const ViewApp = styled.View`
     flex: 1;
+    paddingHorizontal: 15px;
     background-color: rgb(${BackR}, ${BackG}, ${BackB});
     color: rgb(${ForeR}, ${ForeG}, ${ForeB});
 `;
@@ -47,7 +48,6 @@ export const ViewApp = styled.View`
 //
 // style View Main
 export const ViewMain = styled.View`
-    flex: 1;
     flexDirection: column;
 `;
 // End. Style MAIN SCR 
@@ -61,7 +61,7 @@ let widthLimit= WINDOW_WIDTH > 330 ? 330 : WINDOW_WIDTH;
 let widthSepar= WINDOW_WIDTH - 30;
 
 export const ViewHeaderCmp = styled.View`
-    flex: 1;
+    
     alignItems: center;
 `;
 
@@ -144,6 +144,11 @@ export const TextHistoryCmp = styled.Text`
 
 export const ViewListRepCmp = styled.View`
     background-color: rgb(${BackR}, ${BackG}, ${BackB});
+    height: ${WINDOW_HEIGHT-300}px;
+    paddingTop: 5px;
+    paddingBottom: 2px;
+    
+    
 `;
     
 

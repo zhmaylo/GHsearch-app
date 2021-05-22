@@ -13,6 +13,8 @@ export const getSearchResult = async (request: string, dispatch:any) => {
     if (request.length == 0) return null;
     dispatch({ type: SPINER_TOGGLE, payload: true });
     outlist = await getFetch(request);
+    if (outlist.length==undefined) outlist=[];
+    
     dispatch({type: SEARCH_RESULT, payload:outlist});
     dispatch({ type: SPINER_TOGGLE, payload: false });
 };
